@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, depend_on_referenced_packages
 
 import 'dart:core';
 import 'package:flutter/material.dart';
@@ -185,7 +185,6 @@ class _HomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 35,),
         ],
-
       ),
     );
   }
@@ -553,7 +552,12 @@ class _ThirdPageState extends State<ThirdPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+          size: 40,//change your color here
+        ),
+        elevation: 0.0,
       ),
       backgroundColor: const Color(0xFF2B2B2B),
       body: Column(
@@ -579,7 +583,7 @@ class _ThirdPageState extends State<ThirdPage> {
                 const Text("Ingredients - ",style: TextStyle(color: Colors.cyanAccent, fontSize: 20,fontWeight: FontWeight.bold),),
                 const Spacer(),
                 const Icon(Icons.assignment,color: Colors.white,size: 35,),
-                const SizedBox(width: 5,),
+                const SizedBox(width: 8,),
                   ElevatedButton(onPressed: (){
                     getIngredients();
                   },
@@ -598,20 +602,23 @@ class _ThirdPageState extends State<ThirdPage> {
             ),
           ),
           const Divider(),
-          Expanded(child: ListView(
+          Expanded(
+          child : ListView(
             children: [
               for(var p in D)
                 ListTile(
                   leading: const Icon(
                     Icons.cookie_outlined,
                     size: 20,
-                    color: Colors.brown,
+                    color: Colors.white,
                   ),
                   title:Text(p, style: const TextStyle(color: Colors.amber, fontSize: 17,fontWeight: FontWeight.bold),
                   ),
                 )
-            ],
-          ),),
+              ],
+            ),
+
+          ),
           const Divider(),
           Container(
             height: 40,
@@ -622,7 +629,7 @@ class _ThirdPageState extends State<ThirdPage> {
                 const Text("Steps - ",style: TextStyle(color: Colors.cyanAccent, fontSize: 20,fontWeight: FontWeight.bold),),
                 const Spacer(),
                 const Icon(Icons.assignment,color: Colors.white,size: 35,),
-                const SizedBox(width: 5,),
+                const SizedBox(width: 8,),
                   ElevatedButton(onPressed: (){
                     getSteps();
                   },
@@ -642,7 +649,8 @@ class _ThirdPageState extends State<ThirdPage> {
             ),
           ),
           const Divider(),
-          Expanded(child: ListView(
+          Expanded(
+            child : ListView(
             children: [
               for(var q in E)
                 ListTile(
@@ -662,8 +670,9 @@ class _ThirdPageState extends State<ThirdPage> {
                       }
                   ),*/
                 ),
-            ],
-          )),
+              ],
+            ),
+          ),
           //Text(joke,style: TextStyle(color: Colors.white38, fontSize: 10),)
         ],
       ),
