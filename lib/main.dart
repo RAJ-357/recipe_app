@@ -497,7 +497,7 @@ class _SecondPageState extends State<SecondPage> {
     }
 }
 
-const apikey = '03612722289d4bc9967a6f4574a232a6';
+const apikey = 'YOUR_API_KEY';
 
 class ThirdPage extends StatefulWidget {
   const ThirdPage({Key? key,}) : super(key: key);
